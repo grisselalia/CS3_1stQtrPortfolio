@@ -10,20 +10,25 @@
     </label><br/>
     <label> Tip: 
         <input id="tip" />
-    </label></br>
+    </label><br/>
     <label> Service Charge:
         <input id="charge" />
-    </label></br>
-    <button onclick"
+    </label><br/>
+    
+    <button onclick="totalMeal()"> Accept Input </button> </p> 
+    <p>Result: <span id="total"></span></p>
+         <script>
+             function totalMeal() {
+                let mp = Number(document.getElementById("price").value)
+                let tip = Number(document.getElementById("tip").value)
+                let percent = Number(document.getElementById("charge").value)
 
+                let sc = (percent / 100) * mp
+                let total = mp + tip + sc
 
-    <script>
-        function totalMeal() {
-              // place your JS code here
-            
-         
+             document.getElementById("total").innerHTML = total.toFixed(2)
         }
-    </script>
+        </script>
 
 </body>
 </html>
